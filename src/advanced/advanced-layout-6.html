@@ -1,18 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Advanced Layout 6</title>
-    <link rel="stylesheet" href="../style.css" />
-    <style>
-      /* Doe hier jouw ding! */
-    </style>
-  </head>
-  <body id="advanced-layout-6">
-    <header><h1>Advanced Layout 6</h1></header>
-    <nav><a href="../index.html">Terug naar het overzicht</a></nav>
-    <main></main>
-    <footer></footer>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Layout 6</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* Doe hier jouw ding! */
+
+
+    body {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(12, 1fr);
+      gap: 0.5rem;
+      grid-template-areas:
+      "main main main main main main main main"
+      ". . . header header ."
+      ". nav nav . . . ."
+      "footer footer footer footer footer footer footer footer"
+      ;
+    }
+
+    header {
+      grid-area: header;
+      grid-column: 5/7;
+      grid-row: 4/9;
+      z-index: 1;
+    }
+
+    nav {
+      grid-area: nav;
+      grid-column: 2/4;
+      grid-row: 5/10;
+      z-index: 1;
+    }
+
+    main {
+      grid-area: main;
+      grid-column: 1/8;
+      grid-row: 1/7;
+      z-index: 0;
+    }
+
+    footer {
+      grid-area: footer;
+      grid-column: 1/8;
+      grid-row: 7/13;
+      z-index: 0;
+    }
+
+
+  </style>
+</head>
+
+<body id="advanced-layout-6">
+  <header>
+    <h1>Advanced Layout 6</h1>
+  </header>
+  <nav><a href="../index.html">Terug naar het overzicht</a></nav>
+  <main></main>
+  <footer></footer>
+</body>
+
 </html>
